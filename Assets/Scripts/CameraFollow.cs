@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public GameObject Player;
-    public Vector3 Offset;
+    public int speed = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +17,6 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         //move to set Offset position behind Player
+        transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
     }
 }
