@@ -248,8 +248,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plant: {fileID: 0}
   speed: 0.15
-  max: 0.05
-  min: -0.05
+  max: 0.02
+  min: -0.02
+  back: 0
 --- !u!1001 &1720235529
 PrefabInstance:
   m_ObjectHideFlags: 0

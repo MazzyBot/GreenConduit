@@ -582,8 +582,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plant: {fileID: 0}
   speed: 0.15
-  max: 0.05
-  min: -0.05
+  max: 0.02
+  min: -0.02
+  back: 0
 --- !u!1 &7553851358234174787
 GameObject:
   m_ObjectHideFlags: 0

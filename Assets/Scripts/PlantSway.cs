@@ -6,7 +6,7 @@ public class PlantSway : MonoBehaviour
 {
     public Plant plant;
     public float speed, max, min;
-    bool back;
+    public bool back;
 
     // Start is called before the first frame update
     void Start()
@@ -20,20 +20,30 @@ public class PlantSway : MonoBehaviour
         //Debug.Log("current angle = " + transform.eulerAngles.x);
         if(plant.isPlanted == true)
         {
+            //Debug.Log("rotation = " + transform.rotation.x);
             //start sway
-            if (transform.rotation.x <= max && back == false)
+            if (transform.rotation.x <= max &&  back == false)
             {
-                transform.Rotate(speed, 0, 0, Space.Self);
+                transform.Rotate(speed, 0, 0, Space.World);
             }
             else
-            if (transform.rotation.x >= min)
             {
                 back = true;
-                transform.Rotate(-speed, 0, 0, Space.Self);
+            }
+
+
+            if (transform.rotation.x >= min && back == true)
+            {
+                transform.Rotate(-speed, 0, 0, Space.World);
             }
             else
             {
                 back = false;
+            }
+
+            if (transform.rotation.x <= min && transform.rotation.x >= max)
+            {
+                back = !back;
             }
         }
         else
