@@ -14,8 +14,6 @@ public class PlayerControll : MonoBehaviour
     Vector3 rbMove;
     Quaternion rbRotate;
 
-    public GameObject camRotatePoint;
-
     // Start is called before the first frame update
     void Start()
     {

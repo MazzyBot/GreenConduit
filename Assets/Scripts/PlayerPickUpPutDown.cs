@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerPickUpPutDown : MonoBehaviour
 {
-    public GameObject plant;
-    public GameObject pot;
-    public GameObject holding;
+    GameObject plant;
+    GameObject pot;
+    GameObject holding;
 
-    public Vector3 holdPosition;
+    public GameObject plantAnkPoint;
+
     public Vector3 placePosition;
 
     // Start is called before the first frame update
@@ -38,8 +39,8 @@ public class PlayerPickUpPutDown : MonoBehaviour
                 if (plant != null)
                 {
                     holding = plant;
-                    holding.transform.parent = gameObject.transform;
-                    holding.transform.localPosition = holdPosition;
+                    holding.transform.parent = plantAnkPoint.transform;
+                    holding.transform.localPosition = plantAnkPoint.transform.localPosition;
                 }
             }
             else 
