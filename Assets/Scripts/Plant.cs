@@ -30,7 +30,7 @@ public class Plant : MonoBehaviour
             }
         }
         else
-        if(isPlanted == true && (transform.parent == null || transform.parent.name == "Player"))
+        if(isPlanted == true && (transform.parent == null || transform.parent.gameObject.CompareTag("player")))
         {
             isPlanted = false;
             potType = null;
