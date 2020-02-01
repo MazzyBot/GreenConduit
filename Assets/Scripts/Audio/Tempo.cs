@@ -46,7 +46,6 @@ public class Tempo : MonoBehaviour
             startTime = AudioSettings.dspTime;
             currentBeatTime = startTime;
             hasStarted = true;
-            //subdivisionsPerBeat = config.subdivisionsPerBeat;
         }
     }
 
@@ -60,7 +59,7 @@ public class Tempo : MonoBehaviour
         currentBeatTime = 0;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // maybe coroutines with yield could work better? need to test
         if (hasStarted)

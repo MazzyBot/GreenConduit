@@ -27,7 +27,6 @@ public class Plant : MonoBehaviour
             {
                 isPlanted = true;
                 potType = transform.parent.transform.gameObject.GetComponent<Pot>().potType;
-                Debug.Log("play music of plant type " + plantType + " with pot type " + potType);
                 sounds.StartMusic(potType);
             }
         }
@@ -36,7 +35,6 @@ public class Plant : MonoBehaviour
         {
             isPlanted = false;
             potType = PotTypes.Empty;
-            Debug.Log("stop music of " + plantType + " plant");
             sounds.StopMusic();
         }
     }

@@ -9,22 +9,19 @@ public class AudioRandomiser : MonoBehaviour
 
     private bool startedPlaying;
 
-    private AudioSource SetUpSource(AudioClip clip)
+    private void Start()
     {
-        AudioSource source = GetComponent<AudioSource>();
-        source.clip = clip;
-        //source.loop = true;
-        return source;
+        source = GetComponent<AudioSource>();
     }
 
     public void StartMusic(PotTypes songType)
     {
         PlantSongVariation variation = songs.GetVariation(songType);
         currentClips = variation.variations;
+        source.clip = variation.startingClip;
 
-        source = SetUpSource(variation.startingClip);
-        source.Play();
-        startedPlaying = true;
+        // make it be triggered by the tempo
+        Tempo.OnBeat += DoBeat;
     }
 
     public void StopMusic()
@@ -50,5 +47,14 @@ public class AudioRandomiser : MonoBehaviour
     private AudioClip GetRandomClip()
     {
         return currentClips[Random.Range(0, currentClips.Length)];
+    }
+
+    // syncing stuff
+    private void DoBeat()
+    {
+        source.Play();
+        startedPlaying = true;
+        // remove it from being triggered by the tempo
+        Tempo.OnBeat -= DoBeat;
     }
 }
