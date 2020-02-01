@@ -219,9 +219,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plant: {fileID: 0}
-  speed: 0.1
-  max: 20
-  min: -20
+  speed: 0.15
+  max: 0.05
+  min: -0.05
 --- !u!114 &-2169955651569488997
 MonoBehaviour:
   m_ObjectHideFlags: 0

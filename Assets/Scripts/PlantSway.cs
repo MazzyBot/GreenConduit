@@ -21,17 +21,19 @@ public class PlantSway : MonoBehaviour
         if(plant.isPlanted == true)
         {
             //start sway
-            Debug.Log("current angle = " + transform.eulerAngles.x);
-            Debug.Log(360 + min);
-            if (transform.eulerAngles.x < max && back == false)
+            if (transform.rotation.x <= max && back == false)
             {
                 transform.Rotate(speed, 0, 0, Space.Self);
             }
             else
-            if (transform.eulerAngles.x >= 0 && transform.eulerAngles.x < 360 + min)
+            if (transform.rotation.x >= min)
             {
                 back = true;
                 transform.Rotate(-speed, 0, 0, Space.Self);
+            }
+            else
+            {
+                back = false;
             }
         }
         else
