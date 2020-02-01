@@ -5,14 +5,19 @@ using UnityEngine;
 public class PlayerControll : MonoBehaviour
 {
     //for left right rotation
-    public float speedH = 2.0f;
-    private float yaw = 0.0f;
+    public float speedTurn = 10.0f;
+    private float yawTurn = 0.0f;
 
     //for forward backwards movement
-    public float speed = 2;
+    public float speedMove = 5;
     Rigidbody rb;
     Vector3 rbMove;
     Quaternion rbRotate;
+
+    //camera rotation
+    public float speedCam = 8.0f;
+    private float yawCam = 0.0f;
+    public GameObject camRotatePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +28,19 @@ public class PlayerControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //horizontal mouse input
+        //horizontal mouse input for cam rotation
+        yawCam = speedCam * Input.GetAxis("Mouse X");
+        camRotatePoint.transform.Rotate(0.0f, yawCam * speedCam * Time.deltaTime, 0.0f, Space.Self);
+
+
         //rotate player based on horizontal input (with rb)
-        yaw = speedH * Input.GetAxis("Mouse X");
-        rbRotate = Quaternion.Euler(new Vector3(0.0f, yaw * speedH, 0.0f) * Time.deltaTime);
+        yawTurn = speedTurn * Input.GetAxis("Horizontal");
+        rbRotate = Quaternion.Euler(new Vector3(0.0f, yawTurn * speedTurn, 0.0f) * Time.deltaTime);
 
         //key up and down input
         //move player forward/backward
         //get rb change here
-        rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * speed * Time.deltaTime), 0, (Input.GetAxis("Horizontal") * -speed * Time.deltaTime)));
+        rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * speedMove * Time.deltaTime), 0, 0));
     }
 
     void FixedUpdate()
