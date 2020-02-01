@@ -11,6 +11,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
     public GameObject plantAnkPoint;
 
     public Vector3 placePosition;
+    public float potPlacementHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +50,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
                 if (pot != null)
                 {
                     holding.transform.parent = pot.transform;
-                    holding.transform.position = new Vector3(pot.transform.position.x, 0.5f, pot.transform.position.z);
+                    holding.transform.position = new Vector3(pot.transform.position.x, potPlacementHeight, pot.transform.position.z);
                     holding = null;
                 }
                 else

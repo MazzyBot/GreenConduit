@@ -45,9 +45,9 @@ public class CameraFollow : MonoBehaviour
         {
             // in the greenhouse
             transform.position = Vector3.SmoothDamp(transform.position, greenhouseLoco.position + new Vector3(0, greenhouseHeight, 0), ref vel, 0.1f);
-            float step = greenhouseTransitionSpeed * Time.fixedDeltaTime;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(greenhouseCameraRotation), step);
-
+            //float step = greenhouseTransitionSpeed * Time.fixedDeltaTime;
+            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(greenhouseCameraRotation), step);
+            transform.LookAt(playerObject.transform.position);
             // TODO: maybe a little bit of follow??
         }
     }

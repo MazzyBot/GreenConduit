@@ -9,7 +9,9 @@ public class SoundManager : MonoBehaviour
     private float footstepLastPlayed;
 
     public AudioClip shovel;
+    public AudioClip plant;
     public AudioClip effort;
+    public AudioClip collision;
 
     public void footStepsPlay()
     {
@@ -34,5 +36,19 @@ public class SoundManager : MonoBehaviour
         GameObject soundGameObject = new GameObject("sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.PlayOneShot(effort);
+    }
+
+    public void plantPlay()
+    {
+        GameObject soundGameObject = new GameObject("sound");
+        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.PlayOneShot(plant);
+    }
+
+    public void collisionPlay()
+    {
+        GameObject soundGameObject = new GameObject("sound");
+        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.PlayOneShot(collision);
     }
 }

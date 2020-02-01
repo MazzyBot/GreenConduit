@@ -30,7 +30,15 @@ public class PlayerControll : MonoBehaviour
         //key up and down input
         //move player forward/backward
         //get rb change here
-        rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * speedMove * Time.deltaTime), 0, 0));
+        float axisV = Input.GetAxis("Vertical");
+        if (axisV > 0)
+        {
+            rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * speedMove * Time.deltaTime), 0, 0));
+        }
+        else
+        {
+            rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * (speedMove / 3) * Time.deltaTime), 0, 0));
+        }
     }
 
     void FixedUpdate()
