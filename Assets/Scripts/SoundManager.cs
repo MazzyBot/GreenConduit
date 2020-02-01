@@ -6,49 +6,52 @@ public class SoundManager : MonoBehaviour
 {
     public AudioClip footsteps;
     public float footstepTime;
-    private float footstepLastPlayed;
+    private float footstepDelay;
 
     public AudioClip shovel;
     public AudioClip plant;
     public AudioClip effort;
     public AudioClip collision;
 
+    public AudioSource audioSource;
+    public AudioSource audioSource2;
+
     public void footStepsPlay()
     {
-        if(footstepLastPlayed + footstepTime < Time.time)
+        if(footstepDelay + footstepTime < Time.time)
         {
-            GameObject soundGameObject = new GameObject("sound");
-            AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-            audioSource.PlayOneShot(footsteps);
-            footstepLastPlayed = Time.time;
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = footsteps;
+                audioSource.Play();
+                footstepDelay = Time.time;
+            }
         }
+    }
+
+    public void footStepsStop()
+    {
+        audioSource.Stop();
+        footstepDelay = Time.time;
     }
 
     public void shovelPlay()
     {
-        GameObject soundGameObject = new GameObject("sound");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.PlayOneShot(shovel);
+        audioSource2.PlayOneShot(shovel);
     }
 
     public void effortPlay()
     {
-        GameObject soundGameObject = new GameObject("sound");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.PlayOneShot(effort);
+        audioSource2.PlayOneShot(effort);
     }
 
     public void plantPlay()
     {
-        GameObject soundGameObject = new GameObject("sound");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.PlayOneShot(plant);
+        audioSource2.PlayOneShot(plant);
     }
 
     public void collisionPlay()
     {
-        GameObject soundGameObject = new GameObject("sound");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.PlayOneShot(collision);
+        audioSource2.PlayOneShot(collision);
     }
 }

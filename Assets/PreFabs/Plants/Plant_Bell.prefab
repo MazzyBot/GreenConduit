@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 5290365159767944274}
   - component: {fileID: 1365695507}
   - component: {fileID: 1365695500}
+  - component: {fileID: -7949681461400466202}
   m_Layer: 0
   m_Name: Plant_Bell
   m_TagString: plant
@@ -239,6 +240,22 @@ MonoBehaviour:
       startingClip: {fileID: 8300000, guid: 793413d870bf842fea43d37dcf58cbbd, type: 3}
       variations:
       - {fileID: 8300000, guid: c8098e371eb6d46bf8635ebd9753a0e7, type: 3}
+--- !u!114 &-7949681461400466202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290365159767944109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012e242e7bddc384bac5b5265d6ccc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant: {fileID: 0}
+  speed: 2
+  max: 45
+  min: -45
 --- !u!1001 &1602084375
 PrefabInstance:
   m_ObjectHideFlags: 0

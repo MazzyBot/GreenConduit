@@ -13,10 +13,13 @@ public class PlayerPickUpPutDown : MonoBehaviour
     public Vector3 placePosition;
     public float potPlacementHeight;
 
+    //Sound manager
+    SoundManager sound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        sound = GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
@@ -42,6 +45,8 @@ public class PlayerPickUpPutDown : MonoBehaviour
                     holding = plant;
                     holding.transform.parent = plantAnkPoint.transform;
                     holding.transform.localPosition = plantAnkPoint.transform.localPosition;
+                    sound.effortPlay();
+                    sound.shovelPlay();
                 }
             }
             else 
@@ -52,12 +57,16 @@ public class PlayerPickUpPutDown : MonoBehaviour
                     holding.transform.parent = pot.transform;
                     holding.transform.position = new Vector3(pot.transform.position.x, potPlacementHeight, pot.transform.position.z);
                     holding = null;
+                    sound.effortPlay();
+                    sound.plantPlay();
                 }
                 else
                 {
                     holding.transform.localPosition = placePosition;
                     holding.transform.parent = null;
                     holding = null;
+                    sound.effortPlay();
+                    sound.plantPlay();
                 }
             }
         }

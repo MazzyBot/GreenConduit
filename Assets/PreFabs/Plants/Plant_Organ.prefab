@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 9167925882879577730}
   - component: {fileID: -8298219912532458470}
   - component: {fileID: -6790589323362750061}
+  - component: {fileID: 6075809751932571273}
   m_Layer: 0
   m_Name: Plant_Organ
   m_TagString: plant
@@ -233,6 +234,22 @@ MonoBehaviour:
     calmClips:
       startingClip: {fileID: 0}
       variations: []
+--- !u!114 &6075809751932571273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9167925882879576445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012e242e7bddc384bac5b5265d6ccc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant: {fileID: 0}
+  speed: 2
+  max: 45
+  min: -45
 --- !u!1001 &1720235529
 PrefabInstance:
   m_ObjectHideFlags: 0

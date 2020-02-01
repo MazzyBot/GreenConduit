@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 1545427043721694878}
   - component: {fileID: 1545427043721693538}
   - component: {fileID: 2167973884009080120}
+  - component: {fileID: -2912793982707688284}
   - component: {fileID: -2169955651569488997}
   m_Layer: 0
   m_Name: Plant_Bass
@@ -205,6 +206,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2912793982707688284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545427043721694877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012e242e7bddc384bac5b5265d6ccc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant: {fileID: 0}
+  speed: 0.1
+  max: 20
+  min: -20
 --- !u!114 &-2169955651569488997
 MonoBehaviour:
   m_ObjectHideFlags: 0

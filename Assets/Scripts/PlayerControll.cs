@@ -14,10 +14,14 @@ public class PlayerControll : MonoBehaviour
     Vector3 rbMove;
     Quaternion rbRotate;
 
+    //Sound manager
+    SoundManager sound;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        sound = GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
@@ -34,10 +38,18 @@ public class PlayerControll : MonoBehaviour
         if (axisV > 0)
         {
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * speedMove * Time.deltaTime), 0, 0));
+            sound.footStepsPlay();
+        }
+        else
+        if (axisV < 0)
+        {
+            rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * (speedMove / 3) * Time.deltaTime), 0, 0));
+            sound.footStepsPlay();
         }
         else
         {
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * (speedMove / 3) * Time.deltaTime), 0, 0));
+            sound.footStepsStop();
         }
     }
 
@@ -46,5 +58,10 @@ public class PlayerControll : MonoBehaviour
         //update rb here
         rb.MoveRotation((rb.rotation * rbRotate).normalized);
         rb.MovePosition(transform.position + rbMove);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        sound.collisionPlay();
     }
 }

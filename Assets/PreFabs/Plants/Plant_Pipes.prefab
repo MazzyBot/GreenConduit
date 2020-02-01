@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 7553851357189255882}
   - component: {fileID: 7553851357189256501}
   - component: {fileID: 4982570425136511685}
+  - component: {fileID: -4224875161088331724}
   m_Layer: 0
   m_Name: Plant_Pipes
   m_TagString: plant
@@ -567,6 +568,22 @@ MonoBehaviour:
   plantType: pipes
   potType: 0
   isPlanted: 0
+--- !u!114 &-4224875161088331724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553851357189256502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012e242e7bddc384bac5b5265d6ccc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant: {fileID: 0}
+  speed: 2
+  max: 45
+  min: -45
 --- !u!1 &7553851358234174787
 GameObject:
   m_ObjectHideFlags: 0
