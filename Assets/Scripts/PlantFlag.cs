@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlantFlag : MonoBehaviour
 {
     public int rndSeed;
+    int plantNumber;
+    Quaternion rndRotation;
 
     public GameObject[] plants;
 
@@ -15,13 +17,14 @@ public class PlantFlag : MonoBehaviour
         //create plant
         //distroy flag
 
+        float temp = rndSeed * Random.value;
+        rndSeed = (int) temp;
         Random.InitState(rndSeed);
-        Debug.Log("Random State = " + Random.state);
-    }
+        plantNumber = Random.Range(0, 8) / 2;
+        rndRotation = Quaternion.Euler(0, Random.Range(0, 360) * Random.value, 0);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instantiate(plants[plantNumber], transform.position, rndRotation);
+
+        Destroy(gameObject);
     }
 }
