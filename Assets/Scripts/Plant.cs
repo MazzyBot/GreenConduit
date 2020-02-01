@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +26,7 @@ public class Plant : MonoBehaviour
             {
                 isPlanted = true;
                 potType = transform.parent.transform.gameObject.GetComponent<Pot>().potType;
-                Debug.Log("play music of pot type " + plantType + " with potType " + potType);
+                Debug.Log("play music of plant type " + plantType + " with pot type " + potType);
             }
         }
         else
