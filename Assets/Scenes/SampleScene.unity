@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44847882, g: 0.49467057, b: 0.55496913, a: 1}
+  m_IndirectSpecularColor: {r: 0.44847906, g: 0.49467075, b: 0.55496925, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -279,6 +279,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753912107029150920, guid: adbb22f6dcfd1b142a91895253974158,
+        type: 3}
+      propertyPath: potType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adbb22f6dcfd1b142a91895253974158, type: 3}
 --- !u!4 &241377881 stripped
@@ -354,6 +359,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753912107029150920, guid: adbb22f6dcfd1b142a91895253974158,
+        type: 3}
+      propertyPath: potType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adbb22f6dcfd1b142a91895253974158, type: 3}
 --- !u!4 &494131531 stripped
@@ -373,6 +383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PotBusy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912537445772125795, guid: efdc8c2567aa103489dbb2d960b87347,
+        type: 3}
+      propertyPath: potType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4912537445772125807, guid: efdc8c2567aa103489dbb2d960b87347,
         type: 3}
@@ -543,6 +558,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 714671702}
     m_Modifications:
+    - target: {fileID: 6134990633730160088, guid: effa773f9e1c2194db9195ef7476e8ac,
+        type: 3}
+      propertyPath: potType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6134990633730160091, guid: effa773f9e1c2194db9195ef7476e8ac,
         type: 3}
       propertyPath: m_Name
@@ -912,6 +932,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 714671702}
     m_Modifications:
+    - target: {fileID: 6134990633730160088, guid: effa773f9e1c2194db9195ef7476e8ac,
+        type: 3}
+      propertyPath: potType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6134990633730160091, guid: effa773f9e1c2194db9195ef7476e8ac,
         type: 3}
       propertyPath: m_Name
@@ -1119,6 +1144,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 714671702}
     m_Modifications:
+    - target: {fileID: 6134990633730160088, guid: effa773f9e1c2194db9195ef7476e8ac,
+        type: 3}
+      propertyPath: potType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6134990633730160091, guid: effa773f9e1c2194db9195ef7476e8ac,
         type: 3}
       propertyPath: m_Name
@@ -1296,6 +1326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PotBusy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912537445772125795, guid: efdc8c2567aa103489dbb2d960b87347,
+        type: 3}
+      propertyPath: potType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4912537445772125807, guid: efdc8c2567aa103489dbb2d960b87347,
         type: 3}
@@ -1718,6 +1753,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753912107029150920, guid: adbb22f6dcfd1b142a91895253974158,
+        type: 3}
+      propertyPath: potType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adbb22f6dcfd1b142a91895253974158, type: 3}
 --- !u!4 &1730420450 stripped
@@ -1806,6 +1846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PotBusy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912537445772125795, guid: efdc8c2567aa103489dbb2d960b87347,
+        type: 3}
+      propertyPath: potType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4912537445772125807, guid: efdc8c2567aa103489dbb2d960b87347,
         type: 3}
@@ -2269,16 +2314,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5565765842719457605, guid: 4c37f9f67074f6f4c9ff8e9e7514caee,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5565765842719457605, guid: 4c37f9f67074f6f4c9ff8e9e7514caee,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.9
-      objectReference: {fileID: 0}
     - target: {fileID: 5565765843303410850, guid: 4c37f9f67074f6f4c9ff8e9e7514caee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2334,20 +2369,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5565765843303410851, guid: 4c37f9f67074f6f4c9ff8e9e7514caee,
-        type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5565765843303410854, guid: 4c37f9f67074f6f4c9ff8e9e7514caee,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5565765843303410854, guid: 4c37f9f67074f6f4c9ff8e9e7514caee,
-        type: 3}
-      propertyPath: m_TagString
-      value: player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c37f9f67074f6f4c9ff8e9e7514caee, type: 3}

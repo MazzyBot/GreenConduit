@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  potType: middle
+  potType: 2
 --- !u!65 &7753912107029150919
 BoxCollider:
   m_ObjectHideFlags: 0

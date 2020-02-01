@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  potType: notbusy
+  potType: 3
 --- !u!136 &6134990633730160167
 CapsuleCollider:
   m_ObjectHideFlags: 0

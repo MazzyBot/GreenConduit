@@ -5,16 +5,17 @@ using UnityEngine;
 public class Plant : MonoBehaviour
 {
     //audio stuff
+    private AudioRandomiser sounds;
 
     public string plantType;    //PLACE HOLDER TEMP
 
-    public string potType;
+    public PotTypes potType;
     public bool isPlanted;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        sounds = GetComponent<AudioRandomiser>();
     }
 
     // Update is called once per frame
@@ -27,14 +28,16 @@ public class Plant : MonoBehaviour
                 isPlanted = true;
                 potType = transform.parent.transform.gameObject.GetComponent<Pot>().potType;
                 Debug.Log("play music of plant type " + plantType + " with pot type " + potType);
+                sounds.StartMusic(potType);
             }
         }
         else
         if(isPlanted == true && (transform.parent == null || transform.parent.gameObject.CompareTag("player")))
         {
             isPlanted = false;
-            potType = null;
+            potType = PotTypes.Empty;
             Debug.Log("stop music of " + plantType + " plant");
+            sounds.StopMusic();
         }
     }
 }
