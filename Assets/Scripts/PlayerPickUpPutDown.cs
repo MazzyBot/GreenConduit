@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerPickUpPutDown : MonoBehaviour
 {
-    GameObject plant;
-    GameObject pot;
-    GameObject holding;
+    public GameObject plant;
+    public GameObject pot;
+    public GameObject holding;
 
     public GameObject plantAnkPoint;
 
