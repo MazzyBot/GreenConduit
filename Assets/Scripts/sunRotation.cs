@@ -15,6 +15,6 @@ public class sunRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(x/10, y/10, z/10, Space.World);
+        transform.Rotate(x / 10 * Time.deltaTime, y / 10 * Time.deltaTime, z / 10 * Time.deltaTime, Space.World);
     }
 }

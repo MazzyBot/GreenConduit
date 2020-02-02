@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9167925881851468042}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,8 +55,8 @@ GameObject:
   - component: {fileID: 9167925882879577729}
   - component: {fileID: 9167925882879576446}
   - component: {fileID: 9167925882879577730}
-  - component: {fileID: -6790589323362750061}
   - component: {fileID: 6075809751932571273}
+  - component: {fileID: -6790589323362750061}
   m_Layer: 0
   m_Name: Plant_Organ
   m_TagString: plant
@@ -109,34 +109,6 @@ MonoBehaviour:
   plantType: organ
   potType: 0
   isPlanted: 0
---- !u!114 &-6790589323362750061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9167925882879576445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9140d4128a9b847549aa1d432d377186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songs:
-    clipVolume: 0.8
-    busyClips:
-      startingClip: {fileID: 8300000, guid: cdcbe8d9185c040628c734b754404301, type: 3}
-      variations:
-      - {fileID: 8300000, guid: 6306803a474eb4a99b58ec5cf95d540c, type: 3}
-      - {fileID: 8300000, guid: 2db765d27248f4678b5a5f2f7657b69e, type: 3}
-      - {fileID: 8300000, guid: 79d328cd5246a42a78dda2b055f89b6a, type: 3}
-      - {fileID: 8300000, guid: a79c78986ac664304b27c8b265c4ab1a, type: 3}
-      - {fileID: 8300000, guid: 8a37533a54496412d87baf5abc03e2b3, type: 3}
-    mediumClips:
-      startingClip: {fileID: 0}
-      variations: []
-    calmClips:
-      startingClip: {fileID: 0}
-      variations: []
 --- !u!114 &6075809751932571273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +126,32 @@ MonoBehaviour:
   max: 0.02
   min: -0.02
   back: 0
+--- !u!114 &-6790589323362750061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9167925882879576445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9140d4128a9b847549aa1d432d377186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songs:
+    clipVolume: 0.8
+    busyClips:
+      startingClip: {fileID: 8300000, guid: b35ede523061e44139fa1d61bcae38dd, type: 3}
+      variations:
+      - {fileID: 8300000, guid: b35ede523061e44139fa1d61bcae38dd, type: 3}
+    mediumClips:
+      startingClip: {fileID: 8300000, guid: b35ede523061e44139fa1d61bcae38dd, type: 3}
+      variations:
+      - {fileID: 8300000, guid: b35ede523061e44139fa1d61bcae38dd, type: 3}
+    calmClips:
+      startingClip: {fileID: 8300000, guid: b35ede523061e44139fa1d61bcae38dd, type: 3}
+      variations:
+      - {fileID: 8300000, guid: b35ede523061e44139fa1d61bcae38dd, type: 3}
 --- !u!1001 &1720235529
 PrefabInstance:
   m_ObjectHideFlags: 0

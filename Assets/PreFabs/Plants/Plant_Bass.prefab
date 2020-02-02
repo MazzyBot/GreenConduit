@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1545427042620153578}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,21 +141,17 @@ MonoBehaviour:
   songs:
     clipVolume: 0.8
     busyClips:
-      startingClip: {fileID: 8300000, guid: 577ea5e6326ab4405bac1ef1c57b368a, type: 3}
+      startingClip: {fileID: 8300000, guid: 793413d870bf842fea43d37dcf58cbbd, type: 3}
       variations:
-      - {fileID: 8300000, guid: 5b616d7070f3845f3a3c2aef2b353ed5, type: 3}
-      - {fileID: 8300000, guid: 5e51485993e034e7ba5e0d7aab583e79, type: 3}
-      - {fileID: 8300000, guid: 36297ef89271f4ff1bdab5134416b09b, type: 3}
-      - {fileID: 8300000, guid: b92db5ffc671e4f6ca37953acafc6f14, type: 3}
-      - {fileID: 8300000, guid: 9c9fd93863821400f89fcad64f7f488a, type: 3}
+      - {fileID: 8300000, guid: 793413d870bf842fea43d37dcf58cbbd, type: 3}
     mediumClips:
-      startingClip: {fileID: 0}
-      variations: []
+      startingClip: {fileID: 8300000, guid: 793413d870bf842fea43d37dcf58cbbd, type: 3}
+      variations:
+      - {fileID: 8300000, guid: 793413d870bf842fea43d37dcf58cbbd, type: 3}
     calmClips:
-      startingClip: {fileID: 0}
-      variations: []
-  sourceOne: {fileID: 0}
-  sourceTwo: {fileID: 0}
+      startingClip: {fileID: 8300000, guid: 793413d870bf842fea43d37dcf58cbbd, type: 3}
+      variations:
+      - {fileID: 8300000, guid: 793413d870bf842fea43d37dcf58cbbd, type: 3}
 --- !u!1001 &30915666
 PrefabInstance:
   m_ObjectHideFlags: 0

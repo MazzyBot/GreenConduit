@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5290365158741933018}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,8 +55,8 @@ GameObject:
   - component: {fileID: 5290365159767944273}
   - component: {fileID: 5290365159767944110}
   - component: {fileID: 5290365159767944274}
-  - component: {fileID: 1365695500}
   - component: {fileID: -7949681461400466202}
+  - component: {fileID: 1365695500}
   m_Layer: 0
   m_Name: Plant_Bell
   m_TagString: plant
@@ -109,40 +109,6 @@ MonoBehaviour:
   plantType: bell
   potType: 0
   isPlanted: 0
---- !u!114 &1365695500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5290365159767944109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9140d4128a9b847549aa1d432d377186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songs:
-    clipVolume: 0.73
-    busyClips:
-      startingClip: {fileID: 8300000, guid: 67a571a0821bd48f380c6dd34935562a, type: 3}
-      variations:
-      - {fileID: 8300000, guid: 67a571a0821bd48f380c6dd34935562a, type: 3}
-      - {fileID: 8300000, guid: a6be1faad08044d32b36d5216807de73, type: 3}
-      - {fileID: 8300000, guid: 10d7f4c3123334e42bff46e4edf08b56, type: 3}
-      - {fileID: 8300000, guid: db368818edf2d427f821311ef5e5ba8f, type: 3}
-      - {fileID: 8300000, guid: df8cdadfb7a4e4f1f8f1b547c1895dad, type: 3}
-    mediumClips:
-      startingClip: {fileID: 8300000, guid: 750d871ac1c6d4c5492850340b3a974a, type: 3}
-      variations:
-      - {fileID: 8300000, guid: f6fc0dde350634688908e39fea96b914, type: 3}
-      - {fileID: 8300000, guid: 8362579172abf4168a90be19c74452e1, type: 3}
-      - {fileID: 8300000, guid: 97bf653d74ed841e08742f7a7d2b2df9, type: 3}
-      - {fileID: 8300000, guid: fb3bf9164c9094fd3b36f94d639c759f, type: 3}
-      - {fileID: 8300000, guid: 9821559365cfc4b39a8b9abb72691060, type: 3}
-    calmClips:
-      startingClip: {fileID: 8300000, guid: 793413d870bf842fea43d37dcf58cbbd, type: 3}
-      variations:
-      - {fileID: 8300000, guid: c8098e371eb6d46bf8635ebd9753a0e7, type: 3}
 --- !u!114 &-7949681461400466202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +126,32 @@ MonoBehaviour:
   max: 0.02
   min: -0.02
   back: 0
+--- !u!114 &1365695500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290365159767944109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9140d4128a9b847549aa1d432d377186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songs:
+    clipVolume: 0.73
+    busyClips:
+      startingClip: {fileID: 8300000, guid: 61a443f4046364bd5a45899ca9d9a848, type: 3}
+      variations:
+      - {fileID: 8300000, guid: 61a443f4046364bd5a45899ca9d9a848, type: 3}
+    mediumClips:
+      startingClip: {fileID: 8300000, guid: 61a443f4046364bd5a45899ca9d9a848, type: 3}
+      variations:
+      - {fileID: 8300000, guid: 61a443f4046364bd5a45899ca9d9a848, type: 3}
+    calmClips:
+      startingClip: {fileID: 0}
+      variations:
+      - {fileID: 8300000, guid: 61a443f4046364bd5a45899ca9d9a848, type: 3}
 --- !u!1001 &1602084375
 PrefabInstance:
   m_ObjectHideFlags: 0

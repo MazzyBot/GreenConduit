@@ -9,7 +9,7 @@ public class GamePause : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pausePanel.SetActive(false);
+        unPause();
     }
 
     // Update is called once per frame

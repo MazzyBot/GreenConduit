@@ -8,47 +8,46 @@ public class PlantSway : MonoBehaviour
     public float speed, max, min;
     public bool back;
 
+    private Tempo globalTempo;
+
     // Start is called before the first frame update
     void Start()
     {
         plant = GetComponent<Plant>();
+        
+        globalTempo = GameObject.FindGameObjectWithTag("Tempo").GetComponent<Tempo>();
+        globalTempo.beat.AddListener(changeSway);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("current angle = " + transform.eulerAngles.x);
-        if(plant.isPlanted == true)
+        if (plant.isPlanted == true)
         {
             //Debug.Log("rotation = " + transform.rotation.x);
+            //Debug.Log("Euler = " + transform.localEulerAngles);
             //start sway
-            if (transform.rotation.x <= max &&  back == false)
+            if (back == false)
             {
-                transform.Rotate(speed, 0, 0, Space.World);
-            }
-            else
-            {
-                back = true;
+                transform.Rotate(speed, 0, 0, Space.Self);
+                Debug.Log("pos speed");
             }
 
 
-            if (transform.rotation.x >= min && back == true)
+            if (back == true)
             {
-                transform.Rotate(-speed, 0, 0, Space.World);
-            }
-            else
-            {
-                back = false;
-            }
-
-            if (transform.rotation.x <= min && transform.rotation.x >= max)
-            {
-                back = !back;
+                transform.Rotate(-speed, 0, 0, Space.Self);
+                Debug.Log("neg speed");
             }
         }
         else
         {
             transform.Rotate(0, 0, 0, Space.World);
-        }
+        } 
+    }
+
+    public void changeSway()
+    {
+        back = !back;
     }
 }

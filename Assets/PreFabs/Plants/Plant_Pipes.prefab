@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 7553851357189256501}
   - component: {fileID: 4982570425136511685}
   - component: {fileID: -4224875161088331724}
-  - component: {fileID: 1828965349935570859}
+  - component: {fileID: -8089732197414962634}
   m_Layer: 0
   m_Name: Plant_Pipes
   m_TagString: plant
@@ -586,7 +586,7 @@ MonoBehaviour:
   max: 0.02
   min: -0.02
   back: 0
---- !u!114 &1828965349935570859
+--- !u!114 &-8089732197414962634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -599,16 +599,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songs:
-    clipVolume: 0.8
+    clipVolume: 0
     busyClips:
-      startingClip: {fileID: 0}
-      variations: []
+      startingClip: {fileID: 8300000, guid: c8098e371eb6d46bf8635ebd9753a0e7, type: 3}
+      variations:
+      - {fileID: 8300000, guid: c8098e371eb6d46bf8635ebd9753a0e7, type: 3}
     mediumClips:
-      startingClip: {fileID: 0}
-      variations: []
+      startingClip: {fileID: 8300000, guid: c8098e371eb6d46bf8635ebd9753a0e7, type: 3}
+      variations:
+      - {fileID: 8300000, guid: c8098e371eb6d46bf8635ebd9753a0e7, type: 3}
     calmClips:
-      startingClip: {fileID: 0}
-      variations: []
+      startingClip: {fileID: 8300000, guid: c8098e371eb6d46bf8635ebd9753a0e7, type: 3}
+      variations:
+      - {fileID: 8300000, guid: c8098e371eb6d46bf8635ebd9753a0e7, type: 3}
 --- !u!1 &7553851358234174787
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +624,7 @@ GameObject:
   - component: {fileID: 7553851358234174785}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
