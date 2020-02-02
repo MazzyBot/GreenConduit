@@ -17,6 +17,8 @@ public class PlayerControll : MonoBehaviour
     //Sound manager
     SoundManager sound;
 
+    public AnimationController anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +42,7 @@ public class PlayerControll : MonoBehaviour
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * speedMove * Time.deltaTime), 0, 0));
             sound.footStepsPlay();
         }
-        else
-        if (axisV < 0)
+        else if (axisV < 0)
         {
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * (speedMove / 3) * Time.deltaTime), 0, 0));
             sound.footStepsPlay();
@@ -51,6 +52,7 @@ public class PlayerControll : MonoBehaviour
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * (speedMove / 3) * Time.deltaTime), 0, 0));
             sound.footStepsStop();
         }
+        anim.SetVelocity(rbMove.x);
     }
 
     void FixedUpdate()

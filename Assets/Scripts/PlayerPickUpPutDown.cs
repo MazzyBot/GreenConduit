@@ -15,6 +15,9 @@ public class PlayerPickUpPutDown : MonoBehaviour
 
     //Sound manager
     SoundManager sound;
+    public AnimationController anim;
+    private bool canInput = true;
+    private bool potting;
 
     // Start is called before the first frame update
     void Start()
@@ -36,17 +39,17 @@ public class PlayerPickUpPutDown : MonoBehaviour
         //else
         //just place on ground
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && canInput)
         {
             if (holding == null)
             {
                 if (plant != null)
                 {
-                    holding = plant;
-                    holding.transform.parent = plantAnkPoint.transform;
-                    holding.transform.localPosition = plantAnkPoint.transform.localPosition;
                     sound.effortPlay();
                     sound.shovelPlay();
+                    holding = plant;
+                    canInput = false;
+                    anim.DoScoop();
                 }
             }
             else 
@@ -54,19 +57,19 @@ public class PlayerPickUpPutDown : MonoBehaviour
             {
                 if (pot != null)
                 {
-                    holding.transform.parent = pot.transform;
-                    holding.transform.position = new Vector3(pot.transform.position.x, potPlacementHeight, pot.transform.position.z);
-                    holding = null;
                     sound.effortPlay();
                     sound.plantPlay();
+                    potting = true;
+                    canInput = false;
+                    anim.DoPlace();
                 }
                 else
                 {
-                    holding.transform.localPosition = placePosition;
-                    holding.transform.parent = null;
-                    holding = null;
                     sound.effortPlay();
                     sound.plantPlay();
+                    potting = false;
+                    canInput = false;
+                    anim.DoPlace();
                 }
             }
         }
@@ -87,14 +90,57 @@ public class PlayerPickUpPutDown : MonoBehaviour
         {
             pot = temp;
         }
-
     }
 
     void OnTriggerExit(Collider collider)
     {
         //on plant exit set dump plant info and set pick up to false
         //on plantspot exit dump info and set plantspot to false(use null instead of bool?)
-        plant = null;
-        pot = null;
+        if (collider.CompareTag("pot"))
+        {
+            pot = null;
+        }
+        else if (collider.CompareTag("plant"))
+        {
+            plant = null;
+        }
     }
+
+    public void DoPickUp()
+    {
+        holding.transform.parent = plantAnkPoint.transform;
+        holding.transform.localPosition = plantAnkPoint.transform.localPosition;
+        StartCoroutine(FixHolding());
+        canInput = true;
+    }
+
+    public void DoPlace()
+    {
+        holding.transform.rotation = Quaternion.identity;
+        if (potting)
+        {
+            holding.transform.parent = pot.transform;
+            holding.transform.position = new Vector3(pot.transform.position.x, potPlacementHeight, pot.transform.position.z);
+        }
+        else
+        {
+            holding.transform.parent = null;
+            holding.transform.position = transform.position + (transform.rotation * placePosition);
+        }
+        holding = null;
+        canInput = true;
+    }
+
+    IEnumerator FixHolding()
+    {
+        for (int i = 0; i < 40; i++)
+        {
+            var step = 500 * Time.deltaTime;
+            Quaternion rot = holding.transform.rotation;
+            holding.transform.rotation = Quaternion.RotateTowards(rot, Quaternion.Euler(0, rot.eulerAngles.y, 0), step);
+            yield return null;
+        }
+        Debug.Log("Done!");
+    }
+
 }
