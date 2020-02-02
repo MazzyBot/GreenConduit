@@ -65,6 +65,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
                 }
                 else
                 {
+                    holding.transform.parent = null;
                     sound.effortPlay();
                     sound.plantPlay();
                     potting = false;
