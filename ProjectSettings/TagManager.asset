@@ -8,6 +8,7 @@ TagManager:
   - plant
   - pot
   - player
+  - Tempo
   layers:
   - Default
   - TransparentFX

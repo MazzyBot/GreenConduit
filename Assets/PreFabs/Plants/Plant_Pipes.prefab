@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 7553851357189256501}
   - component: {fileID: 4982570425136511685}
   - component: {fileID: -4224875161088331724}
+  - component: {fileID: 1828965349935570859}
   m_Layer: 0
   m_Name: Plant_Pipes
   m_TagString: plant
@@ -585,6 +586,29 @@ MonoBehaviour:
   max: 0.02
   min: -0.02
   back: 0
+--- !u!114 &1828965349935570859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553851357189256502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9140d4128a9b847549aa1d432d377186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songs:
+    clipVolume: 0.8
+    busyClips:
+      startingClip: {fileID: 0}
+      variations: []
+    mediumClips:
+      startingClip: {fileID: 0}
+      variations: []
+    calmClips:
+      startingClip: {fileID: 0}
+      variations: []
 --- !u!1 &7553851358234174787
 GameObject:
   m_ObjectHideFlags: 0

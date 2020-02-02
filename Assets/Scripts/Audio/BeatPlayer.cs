@@ -3,6 +3,7 @@
 public class BeatPlayer : MonoBehaviour
 {
     private AudioSource source;
+    public Tempo tempo;
 
     private void Start()
     {
@@ -11,12 +12,12 @@ public class BeatPlayer : MonoBehaviour
 
     void OnEnable()
     {
-        Tempo.OnBeat += PlayThing;
+        tempo.beat.AddListener(PlayThing);
     }
 
     void OnDisable()
     {
-        Tempo.OnBeat -= PlayThing;
+        tempo.beat.RemoveListener(PlayThing);
     }
 
     private void PlayThing()

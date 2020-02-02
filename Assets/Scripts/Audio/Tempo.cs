@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Tempo class for starting and stopping tempo. Keeps the beat.
@@ -8,9 +9,8 @@ public class Tempo : MonoBehaviour
     public float BPM;
 
     // Unity Event stuff
-    public delegate void BeatAction();
-    public static event BeatAction OnBeat;
-
+    public UnityEvent beat;
+    
     private bool hasStarted;
     private double secsPerBeat;
     private double startTime;
@@ -19,6 +19,8 @@ public class Tempo : MonoBehaviour
 
     private void Start()
     {
+        if (beat == null)
+            beat = new UnityEvent();
         SetTempo(TempoUtils.FlipBpmInterval(BPM));
         StartTempo();
     }
@@ -85,6 +87,7 @@ public class Tempo : MonoBehaviour
     private void Beat()
     {
         // calls the delegate method if there are listeners
-        OnBeat?.Invoke();
+        if (beat != null)
+            beat.Invoke();
     }
 }
