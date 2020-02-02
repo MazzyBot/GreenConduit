@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour
     public float followSpeed;
     public float cameraRotateSpeed;
     public Vector3 followOffset;
+    public bool lockBehind;
 
     // greenhouse stuff
     public bool followingPlayer;
@@ -24,7 +25,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Update()
     {
-        if (followingPlayer)
+        if (followingPlayer && !lockBehind)
         {
             //horizontal mouse input for cam rotation
             currentY += cameraRotateSpeed * Input.GetAxis("Mouse X");
@@ -37,9 +38,19 @@ public class CameraFollow : MonoBehaviour
         if (followingPlayer)
         {
             //move to set Offset position behind Player
-            Quaternion rotation = Quaternion.Euler(0, currentY, 0);
-            transform.position = Vector3.SmoothDamp(transform.position, playerObject.transform.position + rotation * followOffset, ref vel, followSpeed * 0.1f);
-            transform.LookAt(playerObject.transform.position);
+            if (!lockBehind)
+            {
+                Quaternion rotation = Quaternion.Euler(0, currentY, 0);
+                transform.position = Vector3.SmoothDamp(transform.position, playerObject.transform.position + rotation * followOffset, ref vel, followSpeed * 0.1f);
+                transform.LookAt(playerObject.transform.position);
+            }
+            else
+            if (lockBehind)
+            {
+                Quaternion rotation = Quaternion.Euler(0, playerObject.transform.eulerAngles.y, 0);
+                transform.position = Vector3.SmoothDamp(transform.position, playerObject.transform.position + rotation * followOffset, ref vel, followSpeed * 0.1f);
+                transform.LookAt(playerObject.transform.position);
+            }
         }
         else
         {
@@ -48,8 +59,6 @@ public class CameraFollow : MonoBehaviour
             //float step = greenhouseTransitionSpeed * Time.fixedDeltaTime;
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(greenhouseCameraRotation), step);
             transform.LookAt(playerObject.transform.position);
-            
-            // TODO: maybe a little bit of follow??
         }
     }
 }
