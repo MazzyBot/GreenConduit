@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 7553851358234174785}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: plant
+  m_TagString: ignore for sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -16,8 +16,8 @@ public class PlayerPickUpPutDown : MonoBehaviour
     //Sound manager
     SoundManager sound;
     public AnimationController anim;
-    private bool canInput = true;
-    private bool potting;
+    public bool canInput = true;
+    public bool potting;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +65,6 @@ public class PlayerPickUpPutDown : MonoBehaviour
                 }
                 else
                 {
-                    holding.transform.parent = null;
                     sound.effortPlay();
                     sound.plantPlay();
                     potting = false;
@@ -97,8 +96,9 @@ public class PlayerPickUpPutDown : MonoBehaviour
     {
         //on plant exit set dump plant info and set pick up to false
         //on plantspot exit dump info and set plantspot to false(use null instead of bool?)
-        if (collider.CompareTag("pot"))
+        if (collider.CompareTag("pot") && canInput == true)
         {
+            Debug.Log("Pot dumped : on collider exit");
             pot = null;
         }
         else if (collider.CompareTag("plant"))

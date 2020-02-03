@@ -65,12 +65,9 @@ public class PlayerControll : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //Debug.Log("colliding with " + collision.gameObject);
-        if (!collision.gameObject.CompareTag("plant"))
+        if (!collision.gameObject.CompareTag("ignore for sound"))
         {
-            if (!collision.gameObject.CompareTag("player"))
-            {
-                sound.collisionPlay();
-            }
+         sound.collisionPlay();
         }
     }
 }
