@@ -78,6 +78,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
         }
     }
 
+    /*
     void OnCollisionEnter(Collision collision)
     {
         bodyColliderExit = false;
@@ -89,17 +90,18 @@ public class PlayerPickUpPutDown : MonoBehaviour
         Debug.Log("body hit exit");
         bodyColliderExit = true;
     }
+    */
 
     void OnTriggerStay(Collider collider)
     {
         //on plant enter get plant and set pick up to true
         //on plantspot enter get info and set putdown to true(use null instead of bool?)
-        if (collider.CompareTag("plant") && bodyColliderExit == false)
+        if (collider.CompareTag("plant"))
         {
             plant = collider.gameObject;
         }
         
-        if (collider.CompareTag("pot") && bodyColliderExit == false)
+        if (collider.CompareTag("pot"))
         {
             pot = collider.gameObject;
         }
