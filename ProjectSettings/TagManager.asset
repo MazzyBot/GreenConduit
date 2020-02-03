@@ -9,6 +9,8 @@ TagManager:
   - pot
   - player
   - Tempo
+  - ignore for sound
+  - ground
   layers:
   - Default
   - TransparentFX

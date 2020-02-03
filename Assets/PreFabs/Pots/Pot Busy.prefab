@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 2330387638553427977}
   - component: {fileID: 3704115197459580250}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: potCollider
   m_TagString: ignore for sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

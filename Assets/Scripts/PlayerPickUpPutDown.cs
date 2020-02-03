@@ -19,6 +19,9 @@ public class PlayerPickUpPutDown : MonoBehaviour
     public bool canInput = true;
     public bool potting;
 
+    //body hit checker
+    bool bodyColliderExit = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,20 +78,30 @@ public class PlayerPickUpPutDown : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnCollisionEnter(Collision collision)
+    {
+        bodyColliderExit = false;
+        Debug.Log("collision enter of part : " + collision.GetContact(0).thisCollider);
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        Debug.Log("body hit exit");
+        bodyColliderExit = true;
+    }
+
+    void OnTriggerStay(Collider collider)
     {
         //on plant enter get plant and set pick up to true
         //on plantspot enter get info and set putdown to true(use null instead of bool?)
-        GameObject temp = collider.gameObject;
-        
-        if (temp.CompareTag("plant"))
+        if (collider.CompareTag("plant") && bodyColliderExit == false)
         {
-            plant = temp;
+            plant = collider.gameObject;
         }
         
-        if (temp.CompareTag("pot"))
+        if (collider.CompareTag("pot") && bodyColliderExit == false)
         {
-            pot = temp;
+            pot = collider.gameObject;
         }
     }
 

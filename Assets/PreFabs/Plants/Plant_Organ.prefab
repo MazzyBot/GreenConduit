@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9167925881851468041}
   - component: {fileID: 9167925881851468042}
   m_Layer: 0
-  m_Name: Collider
+  m_Name: plantCollider
   m_TagString: ignore for sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &9167925882879576445
 GameObject:
@@ -109,6 +109,8 @@ MonoBehaviour:
   plantType: organ
   potType: 0
   isPlanted: 0
+  onGround: 0
+  colli: {fileID: 9167925881851468042}
 --- !u!114 &6075809751932571273
 MonoBehaviour:
   m_ObjectHideFlags: 0

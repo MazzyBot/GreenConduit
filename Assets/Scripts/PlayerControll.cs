@@ -62,12 +62,15 @@ public class PlayerControll : MonoBehaviour
         rb.MovePosition(transform.position + rbMove);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)  //collision sounds
     {
-        //Debug.Log("colliding with " + collision.gameObject);
+        //Debug.Log("colliding with " + collision.gameObject.name);
         if (!collision.gameObject.CompareTag("ignore for sound"))
         {
-         sound.collisionPlay();
+            if (!collision.gameObject.CompareTag("ground"))
+            {
+                sound.collisionPlay();
+            }
         }
     }
 }
