@@ -227,9 +227,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footsteps: {fileID: 8300000, guid: 8300cc314cbcf004aa3fd666772b655a, type: 3}
   footstepTime: 0.2
-  shovel: {fileID: 8300000, guid: a3b60e55c28d83f418498241453e236b, type: 3}
+  shovel:
+  - {fileID: 8300000, guid: a3b60e55c28d83f418498241453e236b, type: 3}
+  - {fileID: 8300000, guid: e27958636b37d204a861cfb23c2ce86c, type: 3}
+  - {fileID: 8300000, guid: 800faa88915846e4fb8b728e157c4bb5, type: 3}
   plant: {fileID: 8300000, guid: 19ac1ae54c7254b4f857bf7ab29e473e, type: 3}
-  effort: {fileID: 8300000, guid: be182120fe2430f47a61b35182435ed9, type: 3}
+  effort:
+  - {fileID: 8300000, guid: b855a4894cd7efe4daf653e30de29f8f, type: 3}
+  - {fileID: 8300000, guid: fe93e14ad6b1651468d16c3317917bff, type: 3}
+  - {fileID: 8300000, guid: 5258387488ad0b048a5ec3b3fe024d08, type: 3}
+  - {fileID: 8300000, guid: 1bf46ef827aaab842a26cb7de5506a75, type: 3}
+  - {fileID: 8300000, guid: 306fac633fa44cc4fbf9437c94c5aebd, type: 3}
+  - {fileID: 8300000, guid: c3b62b2e4863de34796d42b1e7f076db, type: 3}
+  - {fileID: 8300000, guid: 015ab325920896543ba964d9b9d3dccb, type: 3}
+  - {fileID: 8300000, guid: 7b3a7f809098bae459d0f16199aea7a9, type: 3}
+  - {fileID: 8300000, guid: 1649c2b3d8109eb40a86f84b4c92679c, type: 3}
   collision: {fileID: 8300000, guid: 5124415ea10a34844936ba1181e0c5b6, type: 3}
   audioSource: {fileID: 4597498442429414967}
   audioSource2: {fileID: 4597498442515721314}
@@ -514,6 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpPutDown: {fileID: 4597498442429414968}
+  sounds: {fileID: 4597498442429414966}
 --- !u!1001 &4597498443643701918
 PrefabInstance:
   m_ObjectHideFlags: 0

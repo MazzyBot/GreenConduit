@@ -40,17 +40,14 @@ public class PlayerControll : MonoBehaviour
         if (axisV > 0)
         {
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * speedMove * Time.deltaTime), 0, 0));
-            sound.footStepsPlay();
         }
         else if (axisV < 0)
         {
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * (speedMove / 3) * Time.deltaTime), 0, 0));
-            sound.footStepsPlay();
         }
         else
         {
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * (speedMove / 3) * Time.deltaTime), 0, 0));
-            sound.footStepsStop();
         }
         anim.SetVelocity(rbMove.x);
     }

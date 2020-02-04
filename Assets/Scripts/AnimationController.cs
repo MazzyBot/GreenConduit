@@ -4,6 +4,7 @@ public class AnimationController : MonoBehaviour
 {
     private Animator anim;
     public PlayerPickUpPutDown pickUpPutDown;
+    public SoundManager sounds;
 
     private readonly string scoopTrigger = "Scoop";
     private readonly string placeTrigger = "PlaceTrigger";
@@ -47,8 +48,8 @@ public class AnimationController : MonoBehaviour
         pickUpPutDown.FinishPlace();
     }
 
-    //public void FootstepEvent()
-    //{
-    //    sounds.PlaySound("Footstep");
-    //}
+    public void Footstep()
+    {
+        sounds.footStepPlay();
+    }
 }
