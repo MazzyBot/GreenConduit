@@ -56,14 +56,25 @@ public class PlayerPickUpPutDown : MonoBehaviour
             else 
             if (holding != null)
             {
-                canInput = false;
-                potting = pot != null;
-                anim.DoPlace();
+                if (pot != null)    //so only one plant can be placed per pot
+                {
+                    potting = pot.GetComponent<Pot>().isFull != true;
+                    if (potting == true)    //can not place when in front of full pot
+                    {
+                        canInput = false;
+                        anim.DoPlace();
+                    }
+                }
+                else
+                {
+                    canInput = false;
+                    anim.DoPlace();
+                }
             }
         }
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerStay(Collider collider)   //on trigger stay to keep upto date info and to avoid not being able to pick up due to vars being dumped
     {
         //on plant enter get plant and set pick up to true
         //on plantspot enter get info and set putdown to true(use null instead of bool?)
@@ -97,6 +108,10 @@ public class PlayerPickUpPutDown : MonoBehaviour
     {
         sound.effortPlay();
         sound.shovelPlay();
+        if (holding.transform.parent != null && holding.transform.parent.gameObject.CompareTag("pot"))  //check if in pot, if so isFull = false
+        {
+            holding.transform.parent.GetComponent<Pot>().isFull = false;
+        }
         holding.transform.parent = plantAnkPoint.transform;
         holding.transform.localPosition = plantAnkPoint.transform.localPosition;
         StartCoroutine(FixHolding());
@@ -111,6 +126,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
 
         if (potting)
         {
+            pot.GetComponent<Pot>().isFull = true;  //set pot isFull to true
             holding.transform.parent = pot.transform;
             holding.transform.position = new Vector3(pot.transform.position.x, potPlacementHeight, pot.transform.position.z);
         }
