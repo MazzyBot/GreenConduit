@@ -84,7 +84,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
         //on plantspot exit dump info and set plantspot to false(use null instead of bool?)
         if (collider.CompareTag("pot") && canInput == true)
         {
-            Debug.Log("Pot dumped : on collider exit");
+            //Debug.Log("Pot dumped : on collider exit");
             pot = null;
         }
         else if (collider.CompareTag("plant"))

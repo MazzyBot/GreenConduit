@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerControll : MonoBehaviour
 {
+    //on ground check
+    public bool onGround;
+    public float reboundSpeed;    //when hiting something that takes player off the grounf, how much is rebound
+
     //for left right rotation
     public float speedTurn = 10.0f;
     private float yawTurn = 0.0f;
@@ -36,12 +40,13 @@ public class PlayerControll : MonoBehaviour
         //key up and down input
         //move player forward/backward
         //get rb change here
+            //why is this with rotation, and why doesnt position work?
         float axisV = Input.GetAxis("Vertical");
-        if (axisV > 0)
+        if (axisV > 0 && onGround == true)
         {
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * speedMove * Time.deltaTime), 0, 0));
         }
-        else if (axisV < 0)
+        else if (axisV < 0 && onGround == true)
         {
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * (speedMove / 3) * Time.deltaTime), 0, 0));
         }
@@ -65,6 +70,20 @@ public class PlayerControll : MonoBehaviour
         if (!collision.gameObject.CompareTag("ignore for sound") && !collision.gameObject.CompareTag("ground"))
         {
              sound.collisionPlay();
+        }
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            onGround = true;
+        }
+        else
+        {
+            onGround = false;
+            Vector3 localForward = transform.rotation * -(Vector3.forward) * reboundSpeed;
+            rbMove = transform.rotation * new Vector3(localForward.x, localForward.y, localForward.z);
         }
     }
 }
