@@ -34,14 +34,17 @@ public class AnimationController : MonoBehaviour
 
     public void Scoop()
     {
-        Debug.Log("Scoop");
         pickUpPutDown.DoPickUp();
     }
 
     public void Place()
     {
-        Debug.Log("Place");
         pickUpPutDown.DoPlace();
+    }
+
+    public void EnablePlantCollider()
+    {
+        pickUpPutDown.FinishPlace();
     }
 
     //public void FootstepEvent()

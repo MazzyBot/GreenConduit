@@ -19,9 +19,6 @@ public class PlayerPickUpPutDown : MonoBehaviour
     public bool canInput = true;
     public bool potting;
 
-    //body hit checker
-    bool bodyColliderExit = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -48,9 +45,10 @@ public class PlayerPickUpPutDown : MonoBehaviour
             {
                 if (plant != null)
                 {
-                    sound.effortPlay();
-                    sound.shovelPlay();
+                    // turn off the collision here
+                    // can have another animation event at the end to trigger a function that turns the collider on again
                     holding = plant;
+                    holding.GetComponent<Collider>().isTrigger = true;
                     canInput = false;
                     anim.DoScoop();
                 }
@@ -58,41 +56,14 @@ public class PlayerPickUpPutDown : MonoBehaviour
             else 
             if (holding != null)
             {
-                if (pot != null)
-                {
-                    sound.effortPlay();
-                    sound.plantPlay();
-                    potting = true;
-                    canInput = false;
-                    anim.DoPlace();
-                }
-                else
-                {
-                    sound.effortPlay();
-                    sound.plantPlay();
-                    potting = false;
-                    canInput = false;
-                    anim.DoPlace();
-                }
+                canInput = false;
+                potting = pot != null;
+                anim.DoPlace();
             }
         }
     }
 
-    /*
-    void OnCollisionEnter(Collision collision)
-    {
-        bodyColliderExit = false;
-        Debug.Log("collision enter of part : " + collision.GetContact(0).thisCollider);
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        Debug.Log("body hit exit");
-        bodyColliderExit = true;
-    }
-    */
-
-    void OnTriggerStay(Collider collider)
+    void OnTriggerEnter(Collider collider)
     {
         //on plant enter get plant and set pick up to true
         //on plantspot enter get info and set putdown to true(use null instead of bool?)
@@ -124,6 +95,8 @@ public class PlayerPickUpPutDown : MonoBehaviour
 
     public void DoPickUp()
     {
+        sound.effortPlay();
+        sound.shovelPlay();
         holding.transform.parent = plantAnkPoint.transform;
         holding.transform.localPosition = plantAnkPoint.transform.localPosition;
         StartCoroutine(FixHolding());
@@ -133,6 +106,9 @@ public class PlayerPickUpPutDown : MonoBehaviour
     public void DoPlace()
     {
         holding.transform.rotation = Quaternion.identity;
+        sound.effortPlay();
+        sound.plantPlay();
+
         if (potting)
         {
             holding.transform.parent = pot.transform;
@@ -143,7 +119,15 @@ public class PlayerPickUpPutDown : MonoBehaviour
             holding.transform.parent = null;
             holding.transform.position = transform.position + (transform.rotation * placePosition);
         }
-        holding = null;
+    }
+
+    public void FinishPlace()
+    {
+        if (holding != null)
+        {
+            holding.GetComponent<Collider>().isTrigger = false;
+            holding = null;
+        }
         canInput = true;
     }
 
@@ -156,7 +140,6 @@ public class PlayerPickUpPutDown : MonoBehaviour
             holding.transform.rotation = Quaternion.RotateTowards(rot, Quaternion.Euler(0, rot.eulerAngles.y, 0), step);
             yield return null;
         }
-        Debug.Log("Done!");
     }
 
 }

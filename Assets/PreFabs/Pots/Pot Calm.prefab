@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2929777269862613718
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7169355903747141175}
-  - component: {fileID: 2013656138154216949}
-  m_Layer: 0
-  m_Name: potCollider
-  m_TagString: ignore for sound
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7169355903747141175
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929777269862613718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7805132401351283014}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2013656138154216949
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929777269862613718}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 8321685774571456786, guid: c3fc3bfd159d266478d744bcd0f49aae, type: 3}
 --- !u!1 &6488067792204047189
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +13,7 @@ GameObject:
   - component: {fileID: 4771257336019523465}
   - component: {fileID: 2966696082400797407}
   - component: {fileID: 2966696082400797406}
+  - component: {fileID: 689912224419924002}
   m_Layer: 0
   m_Name: Pot Calm
   m_TagString: pot
@@ -75,8 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
-  m_Children:
-  - {fileID: 7169355903747141175}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -135,7 +90,7 @@ BoxCollider:
   m_GameObject: {fileID: 6488067792204047189}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.04925292, y: 0.04, z: 0.04925292}
   m_Center: {x: -0.000000004656613, y: 0.02, z: 0}
@@ -153,3 +108,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   potType: 3
+--- !u!136 &689912224419924002
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488067792204047189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.02462646
+  m_Height: 0.04
+  m_Direction: 1
+  m_Center: {x: -0.000000004656613, y: 0.02, z: 0}

@@ -12,10 +12,6 @@ public class Plant : MonoBehaviour
     public PotTypes potType;
     public bool isPlanted;
 
-    //for child collider on and off
-    public bool onGround;
-    public Collider colli;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +29,6 @@ public class Plant : MonoBehaviour
                 potType = transform.parent.transform.gameObject.GetComponent<Pot>().potType;
                 sounds.StartMusic(potType);
             }
-            onGround = false;
         }
         else
         if(isPlanted == true && (transform.parent == null || transform.parent.gameObject.CompareTag("player"))) //if it was planted, but its parent isnt a pot(player or nothing) stop music
@@ -41,22 +36,6 @@ public class Plant : MonoBehaviour
             isPlanted = false;
             potType = PotTypes.Empty;
             sounds.StopMusic();
-            onGround = false;
-        }
-        else
-        if (!isPlanted)
-        {
-            onGround = true;    //on ground??
-        }
-
-        //child colli on and off
-        if (onGround == true)
-        {
-            colli.enabled = true;
-        }
-        else
-        {
-            colli.enabled = false;
         }
     }
 }
