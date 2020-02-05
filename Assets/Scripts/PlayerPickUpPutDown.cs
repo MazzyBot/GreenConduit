@@ -124,7 +124,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
         sound.effortPlay();
         sound.plantPlay();
 
-        if (potting)
+        if (potting && pot != null)
         {
             pot.GetComponent<Pot>().isFull = true;  //set pot isFull to true
             holding.transform.parent = pot.transform;
