@@ -5,22 +5,24 @@ public class AudioRandomiser : MonoBehaviour
     public PlantSongs songs;
     private AudioClip[] currentClips;
 
-    private AudioSource sourceOne;
-    private AudioSource sourceTwo;
-    private bool usingSourceOne;
+    private AudioSource theSource;
 
     private Tempo globalTempo;
     private Tempo variationTempo;
 
     private void Start()
     {
-        sourceOne = gameObject.AddComponent<AudioSource>();
-        sourceOne.playOnAwake = false;
-        sourceTwo = gameObject.AddComponent<AudioSource>();
-        sourceTwo.playOnAwake = false;
+        theSource = GetComponent<AudioSource>();
+        if (theSource == null)
+        {
+            theSource = gameObject.AddComponent<AudioSource>();
+        }
+        theSource.playOnAwake = false;
 
         globalTempo = GameObject.FindGameObjectWithTag("Tempo").GetComponent<Tempo>();
         variationTempo = gameObject.AddComponent<Tempo>();
+
+        theSource.volume = songs.clipVolume;
     }
 
     private void OnDisable()
@@ -32,8 +34,7 @@ public class AudioRandomiser : MonoBehaviour
     {
         PlantSongVariation variation = songs.GetVariation(songType);
         currentClips = variation.variations;
-        sourceOne.clip = variation.startingClip;
-        usingSourceOne = false;
+        theSource.clip = variation.startingClip;
 
         variationTempo.SetTempo(variation.startingClip.length);
         variationTempo.beat.AddListener(ClipSwap);
@@ -44,8 +45,7 @@ public class AudioRandomiser : MonoBehaviour
 
     public void StopMusic()
     {
-        sourceOne.Stop();
-        sourceTwo.Stop();
+        theSource.Stop();
         variationTempo.StopTempo();
     }
 
@@ -65,7 +65,7 @@ public class AudioRandomiser : MonoBehaviour
     // syncing stuff
     private void DoBeat()
     {
-        sourceOne.Play();
+        theSource.Play();
 
         // remove it from being triggered by the global tempo
         globalTempo.beat.RemoveListener(DoBeat);
@@ -76,7 +76,6 @@ public class AudioRandomiser : MonoBehaviour
 
     private void ClipSwap()
     {
-        SwapSongs(usingSourceOne ? sourceOne : sourceTwo);
-        usingSourceOne = !usingSourceOne;
+        SwapSongs(theSource);
     }
 }
