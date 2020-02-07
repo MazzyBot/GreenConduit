@@ -36,7 +36,7 @@ public class SoundManager : MonoBehaviour
 
     public void collisionPlay()
     {
-        audioSource2.PlayOneShot(collision);
+        effortPlay();
     }
 
     private AudioClip GetRandomSound(AudioClip[] clips)
