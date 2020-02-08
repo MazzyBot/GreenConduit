@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControll : MonoBehaviour
+public class PlayerControllTest : MonoBehaviour
 {
     //ground check
     public bool onGround;
@@ -22,7 +22,7 @@ public class PlayerControll : MonoBehaviour
     //Sound manager
     SoundManager sound;
 
-    public AnimationController anim;
+    public AnimationControllerTest anim;    //remove 'Test' from this when reverting
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +69,7 @@ public class PlayerControll : MonoBehaviour
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, groundCheckDistance);
         if (onGroundColli == false) //could get rid of secoundary check now
         {
-            if (hit.collider != null && hit.collider.CompareTag("ground"))
+            if (hit.collider != null /*&& hit.collider.CompareTag("ground")*/)
             {
                 onGround = true;
             }
@@ -82,6 +82,9 @@ public class PlayerControll : MonoBehaviour
         {
             onGround = true;
         }
+
+        //check if what is infront/behind is too steep or not a ground object, if it isnt, dont allow movement
+
     }
 
     void FixedUpdate()
@@ -106,17 +109,17 @@ public class PlayerControll : MonoBehaviour
     //on ground collide exit/entry
     void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
-        {
+        //if (collision.gameObject.CompareTag("ground"))
+        //{
             onGroundColli = true;
-        }
+        //}
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
-        {
+        //if (collision.gameObject.CompareTag("ground"))
+        //{
             onGroundColli = false;
-        }
+        //}
     }
 }

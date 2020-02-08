@@ -32,10 +32,28 @@ MonoBehaviour:
   plantAnkPoint: {fileID: 579781185860558587}
   placePosition: {x: 0.75, y: -0.5, z: 0}
   potPlacementHeight: 0.4
-  raycastLength: 0.2
+  raycastLength: 0.5
   anim: {fileID: 1505962322885542591}
   canInput: 1
   potting: 0
+--- !u!114 &1789064250063844748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579781185937951919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3720abc4bcc9168439ef3c5267ec8bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGround: 0
+  onGroundColli: 0
+  groundCheckDistance: 0.51
+  speedTurn: 10
+  speedMove: 4
+  anim: {fileID: 1505962322885542591}
 --- !u!114 &1505962322885542591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,11 +79,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597498442429414970, guid: aab89c50effebf346ba1cc792f73a7e1,
-        type: 3}
-      propertyPath: groundCheckDistance
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414970, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
@@ -96,6 +109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597498442429414971, guid: aab89c50effebf346ba1cc792f73a7e1,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414972, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
@@ -158,24 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4597498442462525509, guid: aab89c50effebf346ba1cc792f73a7e1,
-        type: 3}
-      propertyPath: pickUpPutDown
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597498442462525509, guid: aab89c50effebf346ba1cc792f73a7e1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933182886286387854, guid: aab89c50effebf346ba1cc792f73a7e1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 6933182886286387854, guid: aab89c50effebf346ba1cc792f73a7e1, type: 3}
     - {fileID: 4597498442462525509, guid: aab89c50effebf346ba1cc792f73a7e1, type: 3}
+    - {fileID: 6933182886286387854, guid: aab89c50effebf346ba1cc792f73a7e1, type: 3}
+    - {fileID: 4597498442429414970, guid: aab89c50effebf346ba1cc792f73a7e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aab89c50effebf346ba1cc792f73a7e1, type: 3}
 --- !u!1 &579781185937951919 stripped
 GameObject:

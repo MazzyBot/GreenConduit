@@ -9,6 +9,7 @@ public class pickUpAndDownRayCast : MonoBehaviour
     public GameObject holding;
 
     public GameObject plantAnkPoint;
+    Quaternion plantRotation;
 
     public Vector3 placePosition;
     public float potPlacementHeight;
@@ -53,6 +54,7 @@ public class pickUpAndDownRayCast : MonoBehaviour
                     holding = plant;
                     holding.GetComponent<Collider>().isTrigger = true;
                     canInput = false;
+                    //plantRotation = plant.transform.rotation;
                     anim.DoScoop();
                 }
             }
@@ -64,6 +66,7 @@ public class pickUpAndDownRayCast : MonoBehaviour
                     potting = pot.GetComponent<Pot>().isFull != true;
                     if (potting == true)    //can not place when in front of full pot
                     {
+                        plantRotation = holding.transform.rotation;
                         canInput = false;
                         anim.DoPlace();
                     }
@@ -78,6 +81,7 @@ public class pickUpAndDownRayCast : MonoBehaviour
 
                     if (hitGround.collider != null)
                     {
+                        plantRotation = holding.transform.rotation;
                         canInput = false;
                         anim.DoPlace();
                     }
@@ -132,7 +136,7 @@ public class pickUpAndDownRayCast : MonoBehaviour
 
     public void DoPlace()
     {
-        holding.transform.rotation = Quaternion.identity;
+        holding.transform.rotation = plantRotation;
         sound.effortPlay();
         sound.plantPlay();
 
