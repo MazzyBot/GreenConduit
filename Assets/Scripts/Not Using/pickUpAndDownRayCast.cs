@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPickUpPutDown : MonoBehaviour
+public class pickUpAndDownRayCast : MonoBehaviour
 {
     public GameObject plant;
     public GameObject pot;
@@ -13,9 +13,12 @@ public class PlayerPickUpPutDown : MonoBehaviour
     public Vector3 placePosition;
     public float potPlacementHeight;
 
+    public float raycastLength;
+    RaycastHit hitGround;
+
     //Sound manager
     SoundManager sound;
-    public AnimationController anim;
+    public AnimationControllerTest anim;
     public bool canInput = true;
     public bool potting;
 
@@ -67,8 +70,17 @@ public class PlayerPickUpPutDown : MonoBehaviour
                 }
                 else
                 {
-                    canInput = false;
-                    anim.DoPlace();
+                    Physics.Raycast(transform.position + (transform.rotation * new Vector3(placePosition.x, raycastLength - transform.position.y, 0)), Vector3.down, out hitGround, raycastLength * 2);
+                    
+                    //Debug.Log((transform.position + (transform.rotation * new Vector3(placePosition.x, raycastLength - transform.position.y, 0))) + " to " + (transform.position + (transform.rotation * new Vector3(placePosition.x, -raycastLength - transform.position.y, 0))));
+                    //Debug.Log(hitGround.collider);
+                    //Debug.Log(hitGround.point);
+
+                    if (hitGround.collider != null)
+                    {
+                        canInput = false;
+                        anim.DoPlace();
+                    }
                 }
             }
         }
@@ -95,7 +107,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
         //on plantspot exit dump info and set plantspot to false(use null instead of bool?)
         if (collider.CompareTag("pot") && canInput == true)
         {
-            Debug.Log("Pot dumped : on collider exit");
+            //Debug.Log("Pot dumped : on collider exit");
             pot = null;
         }
         else if (collider.CompareTag("plant"))
@@ -133,7 +145,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
         else
         {
             holding.transform.parent = null;
-            holding.transform.position = transform.position + (transform.rotation * placePosition);
+            holding.transform.position = hitGround.point;
         }
     }
 
@@ -159,4 +171,3 @@ public class PlayerPickUpPutDown : MonoBehaviour
     }
 
 }
-

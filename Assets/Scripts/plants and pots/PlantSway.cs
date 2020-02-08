@@ -26,18 +26,15 @@ public class PlantSway : MonoBehaviour
         {
             //Debug.Log("rotation = " + transform.rotation.x);
             //Debug.Log("Euler = " + transform.localEulerAngles);
-            //start sway
+            //start sway TODO sway keep rotating the plant more and more to one side, probable need to replace with animation
             if (back == false)
             {
                 transform.Rotate(speed, 0, 0, Space.Self);
-                //Debug.Log("pos speed");
             }
-
 
             if (back == true)
             {
                 transform.Rotate(-speed, 0, 0, Space.Self);
-                //Debug.Log("neg speed");
             }
         }
         else
@@ -49,5 +46,18 @@ public class PlantSway : MonoBehaviour
     public void changeSway()
     {
         back = !back;
+        /*  debug for plant swaying to one side too much
+        if (plant.isPlanted == true)
+        {
+            if (back == false)
+            {
+                Debug.Log("forward x max = " + transform.rotation.x);
+            }
+            else
+            {
+                Debug.Log("backwards x max = " + transform.rotation.x);
+            }
+        }
+        */
     }
 }

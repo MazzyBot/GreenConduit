@@ -11,6 +11,8 @@ TagManager:
   - Tempo
   - ignore for sound
   - ground
+  - windArea
+  - grass
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - ground
   - 
   - 
   - 
