@@ -29,7 +29,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
     void Update()
     {
         //get space input
-        
+
         //if not holding an item && if plant is there pick up 
         //else
         //put down if holding an item
@@ -53,7 +53,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
                     anim.DoScoop();
                 }
             }
-            else 
+            else
             if (holding != null)
             {
                 if (pot != null)    //so only one plant can be placed per pot
@@ -82,7 +82,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
         {
             plant = collider.gameObject;
         }
-        
+
         if (collider.CompareTag("pot"))
         {
             pot = collider.gameObject;
@@ -159,3 +159,4 @@ public class PlayerPickUpPutDown : MonoBehaviour
     }
 
 }
+
