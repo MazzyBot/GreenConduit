@@ -81,6 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62de99dc06de98d488f8d6f81e4e8569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onGround: 0
+  reboundSpeed: 0
   speedTurn: 12
   speedMove: 4
   anim: {fileID: 4597498442462525509}
@@ -114,6 +116,7 @@ MonoBehaviour:
   plantAnkPoint: {fileID: 4597498442515721313}
   placePosition: {x: 1, y: -0.55, z: 0}
   potPlacementHeight: 0.4
+  raycastLength: 0.5
   anim: {fileID: 4597498442462525509}
   canInput: 1
   potting: 0
@@ -225,8 +228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb0288ba8aaaad4090b18888e19b1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footsteps: {fileID: 8300000, guid: 8300cc314cbcf004aa3fd666772b655a, type: 3}
-  footstepTime: 0.2
+  footsteps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   shovel:
   - {fileID: 8300000, guid: a3b60e55c28d83f418498241453e236b, type: 3}
   - {fileID: 8300000, guid: e27958636b37d204a861cfb23c2ce86c, type: 3}
