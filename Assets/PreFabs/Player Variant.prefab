@@ -36,7 +36,7 @@ PrefabInstance:
     - target: {fileID: 4597498442429414965, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414966, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 4597498442429414971, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414971, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 4597498442429414971, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
       propertyPath: m_AngularDrag
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414972, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}

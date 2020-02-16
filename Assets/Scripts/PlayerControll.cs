@@ -67,7 +67,7 @@ public class PlayerControll : MonoBehaviour
     void OnCollisionEnter(Collision collision)  //collision sounds
     {
         //Debug.Log("colliding with " + collision.gameObject.name);
-        if (!collision.gameObject.CompareTag("ignore for sound") && !collision.gameObject.CompareTag("ground"))
+        if (!collision.gameObject.CompareTag("ignore for sound") && !collision.gameObject.CompareTag("ground") && !collision.gameObject.CompareTag("grass"))
         {
              sound.collisionPlay();
         }

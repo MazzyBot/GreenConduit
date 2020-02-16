@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 2508264872435450959}
   - component: {fileID: 2508264872435450956}
   - component: {fileID: 2508264872435450957}
-  - component: {fileID: -4197543756964589729}
   - component: {fileID: 2508264872435450946}
   m_Layer: 2
   m_Name: grass_test
@@ -146,20 +145,6 @@ MonoBehaviour:
   resetTimeLength: 40
   canReset: 0
   reset: 0
---- !u!114 &-4197543756964589729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2508264872435450958}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9fe518e225d84d438e6f45c8b5f510c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inWindZone: 0
-  windZone: {fileID: 0}
 --- !u!136 &2508264872435450946
 CapsuleCollider:
   m_ObjectHideFlags: 0
