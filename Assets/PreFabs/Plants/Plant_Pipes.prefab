@@ -601,30 +601,33 @@ MonoBehaviour:
   songs:
     clipVolume: 0.9
     busyClips:
-      startingClip: {fileID: 8300000, guid: e23b418ddd6d0f04e902b8aa8b401c23, type: 3}
+      startingClip: {fileID: 8300000, guid: cf6ef0cfbdfb74b858705baeab0e8bfd, type: 3}
       variations:
-      - {fileID: 8300000, guid: a7d9fecd429afd64e9f90424830aed35, type: 3}
-      - {fileID: 8300000, guid: c2fade25212b24f4ab73759ace5ea875, type: 3}
-      - {fileID: 8300000, guid: 17a2a3f9856d93340818c4726a46930a, type: 3}
-      - {fileID: 8300000, guid: c92b1354d8dd1be4591285974e6f3a36, type: 3}
-      - {fileID: 8300000, guid: 044312f09a27b5f4f8a816a40235ce10, type: 3}
+      - {fileID: 8300000, guid: cf6ef0cfbdfb74b858705baeab0e8bfd, type: 3}
+      - {fileID: 8300000, guid: a9ca9d816522148db8296e90cf4b0055, type: 3}
+      - {fileID: 8300000, guid: ef4e4722dbb214ddaac013c84d048e8e, type: 3}
+      - {fileID: 8300000, guid: 81d7f2d0ea25b4445b39eebd5977ac1e, type: 3}
+      - {fileID: 8300000, guid: 0dbaad3f0ec33452fb634ed2443ad486, type: 3}
+      - {fileID: 8300000, guid: 1c45c87727fb646688262f3d4c06d678, type: 3}
     mediumClips:
-      startingClip: {fileID: 8300000, guid: c5982b2ecfb53984dbb00347f5a1c36a, type: 3}
+      startingClip: {fileID: 8300000, guid: f2e1dd0440d5b4f06a7e04df04f8395a, type: 3}
       variations:
-      - {fileID: 8300000, guid: 5cb6a9bd991518548a045074a220ffc5, type: 3}
-      - {fileID: 8300000, guid: fdc1ed134dc299c438b9df4b8f15d570, type: 3}
-      - {fileID: 8300000, guid: 9f202cf80ce406c4699d67ac9c41eda1, type: 3}
-      - {fileID: 8300000, guid: 79aaa92a96e903043a38e9121461d974, type: 3}
+      - {fileID: 8300000, guid: f2e1dd0440d5b4f06a7e04df04f8395a, type: 3}
+      - {fileID: 8300000, guid: 56b9035dc59334f4aac3323b32d1ad9c, type: 3}
+      - {fileID: 8300000, guid: bdf8285c5541d4dba9e52742b66a4a01, type: 3}
+      - {fileID: 8300000, guid: 033b1e63332294821bd217168c4e44e9, type: 3}
+      - {fileID: 8300000, guid: f15f803213fe54433a32769b7a4b5728, type: 3}
     calmClips:
-      startingClip: {fileID: 8300000, guid: eeb000604d04e6742a4bb1ee459b7c5b, type: 3}
+      startingClip: {fileID: 8300000, guid: 2900c67751fa4466a820c8505b38bb5e, type: 3}
       variations:
-      - {fileID: 8300000, guid: c887484ea2afaae43ba6bcf22d8e2a89, type: 3}
-      - {fileID: 8300000, guid: 13202184b95440f43bba69519cc4fbde, type: 3}
-      - {fileID: 8300000, guid: f1ea47e176ea72b46a9f7b6d642aef40, type: 3}
-      - {fileID: 8300000, guid: cfd82509c2be5b346ac6e188ef60905f, type: 3}
-      - {fileID: 8300000, guid: 9e7a3bf27b58cf340b1d8c7e24425123, type: 3}
-      - {fileID: 8300000, guid: cc956c26b4681444f9be2a4f1a0b3fb5, type: 3}
-      - {fileID: 8300000, guid: 45bc5dbc9768b9b4abf715cfbafbdd36, type: 3}
+      - {fileID: 8300000, guid: 2900c67751fa4466a820c8505b38bb5e, type: 3}
+      - {fileID: 8300000, guid: 99ade7eea4dfa4826a150e9aaf9327f8, type: 3}
+      - {fileID: 8300000, guid: 0ecc13687513440b3b3cbc9f76135ac7, type: 3}
+      - {fileID: 8300000, guid: 598e8a4dd347b4fddb2bdfb4314a0d0a, type: 3}
+      - {fileID: 8300000, guid: 35b6eeb45fc5248b3b946d932494fe8f, type: 3}
+      - {fileID: 8300000, guid: e40105554ecd74721acca05578c3f249, type: 3}
+      - {fileID: 8300000, guid: a2bbccf11a6f44ed4834cff5448c189a, type: 3}
+      - {fileID: 8300000, guid: 17b91a19d32f9490f93bf9e37b10a500, type: 3}
 --- !u!82 &6782480201541367147
 AudioSource:
   m_ObjectHideFlags: 0
@@ -634,7 +637,8 @@ AudioSource:
   m_GameObject: {fileID: 7553851357189256502}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7610920239805233425, guid: 19a0c61b06c4f47dea67879cd4527641,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -729,7 +733,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.1
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

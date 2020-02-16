@@ -36,7 +36,7 @@ PrefabInstance:
     - target: {fileID: 4597498442429414965, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
       propertyPath: m_Name
-      value: Player Variant
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414966, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
@@ -113,10 +113,20 @@ PrefabInstance:
       propertyPath: footsteps.Array.data[13]
       value: 
       objectReference: {fileID: 8300000, guid: 0dc8824abca21c84cbaef54588ac70f3, type: 3}
+    - target: {fileID: 4597498442429414967, guid: aab89c50effebf346ba1cc792f73a7e1,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597498442429414967, guid: aab89c50effebf346ba1cc792f73a7e1,
+        type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414970, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
       propertyPath: reboundSpeed
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414971, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
