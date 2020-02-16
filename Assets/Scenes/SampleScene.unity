@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4513101, g: 0.50019014, b: 0.56905544, a: 1}
+  m_IndirectSpecularColor: {r: 0.45130992, g: 0.50018954, b: 0.5690549, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1352,7 +1352,7 @@ GameObject:
   - component: {fileID: 559891292}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: player
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4498,6 +4498,7 @@ MonoBehaviour:
   followSpeed: 0.5
   cameraRotateSpeed: 2
   followOffset: {x: 0, y: 1, z: 3}
+  lockBehind: 0
   followingPlayer: 1
   greenhouseLoco: {fileID: 1604353086}
   greenhouseHeight: 2
@@ -6028,6 +6029,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4597498442429414968, guid: aab89c50effebf346ba1cc792f73a7e1,
+        type: 3}
+      propertyPath: raycastLength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597498442429414970, guid: aab89c50effebf346ba1cc792f73a7e1,
+        type: 3}
+      propertyPath: reboundSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597498442429414971, guid: aab89c50effebf346ba1cc792f73a7e1,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597498442429414971, guid: aab89c50effebf346ba1cc792f73a7e1,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597498442429414971, guid: aab89c50effebf346ba1cc792f73a7e1,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597498442429414971, guid: aab89c50effebf346ba1cc792f73a7e1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414973, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6036,7 +6067,7 @@ PrefabInstance:
     - target: {fileID: 4597498442429414973, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 4597498442429414973, guid: aab89c50effebf346ba1cc792f73a7e1,
         type: 3}

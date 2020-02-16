@@ -9,9 +9,13 @@ public class PlayerPickUpPutDown : MonoBehaviour
     public GameObject holding;
 
     public GameObject plantAnkPoint;
+    Quaternion plantRotation;
 
     public Vector3 placePosition;
     public float potPlacementHeight;
+
+    public float raycastLength;
+    RaycastHit hitGround;
 
     //Sound manager
     SoundManager sound;
@@ -29,7 +33,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
     void Update()
     {
         //get space input
-        
+
         //if not holding an item && if plant is there pick up 
         //else
         //put down if holding an item
@@ -50,20 +54,43 @@ public class PlayerPickUpPutDown : MonoBehaviour
                     holding = plant;
                     holding.GetComponent<Collider>().isTrigger = true;
                     canInput = false;
+                    //plantRotation = plant.transform.rotation;
                     anim.DoScoop();
                 }
             }
-            else 
+            else
             if (holding != null)
             {
-                canInput = false;
-                potting = pot != null;
-                anim.DoPlace();
+                if (pot != null)    //so only one plant can be placed per pot
+                {
+                    potting = pot.GetComponent<Pot>().isFull != true;
+                    if (potting == true)    //can not place when in front of full pot
+                    {
+                        plantRotation = holding.transform.rotation;
+                        canInput = false;
+                        anim.DoPlace();
+                    }
+                }
+                else
+                {
+                    Physics.Raycast(transform.position + (transform.rotation * new Vector3(placePosition.x, raycastLength - transform.position.y, 0)), Vector3.down, out hitGround, raycastLength * 2);
+
+                    Debug.Log((transform.position + (transform.rotation * new Vector3(placePosition.x, raycastLength - transform.position.y, 0))) + " to " + (transform.position + (transform.rotation * new Vector3(placePosition.x, -raycastLength - transform.position.y, 0))));
+                    Debug.Log(hitGround.collider);
+                    Debug.Log(hitGround.point);
+
+                    if (hitGround.collider != null)
+                    {
+                        plantRotation = holding.transform.rotation;
+                        canInput = false;
+                        anim.DoPlace();
+                    }
+                }
             }
         }
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerStay(Collider collider)   //on trigger stay to keep upto date info and to avoid not being able to pick up due to vars being dumped
     {
         //on plant enter get plant and set pick up to true
         //on plantspot enter get info and set putdown to true(use null instead of bool?)
@@ -71,7 +98,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
         {
             plant = collider.gameObject;
         }
-        
+
         if (collider.CompareTag("pot"))
         {
             pot = collider.gameObject;
@@ -97,6 +124,10 @@ public class PlayerPickUpPutDown : MonoBehaviour
     {
         sound.effortPlay();
         sound.shovelPlay();
+        if (holding.transform.parent != null && holding.transform.parent.gameObject.CompareTag("pot"))  //check if in pot, if so isFull = false
+        {
+            holding.transform.parent.GetComponent<Pot>().isFull = false;
+        }
         holding.transform.parent = plantAnkPoint.transform;
         holding.transform.localPosition = plantAnkPoint.transform.localPosition;
         StartCoroutine(FixHolding());
@@ -105,19 +136,20 @@ public class PlayerPickUpPutDown : MonoBehaviour
 
     public void DoPlace()
     {
-        holding.transform.rotation = Quaternion.identity;
+        holding.transform.rotation = plantRotation;
         sound.effortPlay();
         sound.plantPlay();
 
-        if (potting)
+        if (potting && pot != null)
         {
+            pot.GetComponent<Pot>().isFull = true;  //set pot isFull to true
             holding.transform.parent = pot.transform;
             holding.transform.position = new Vector3(pot.transform.position.x, potPlacementHeight, pot.transform.position.z);
         }
         else
         {
             holding.transform.parent = null;
-            holding.transform.position = transform.position + (transform.rotation * placePosition);
+            holding.transform.position = hitGround.point;
         }
     }
 
