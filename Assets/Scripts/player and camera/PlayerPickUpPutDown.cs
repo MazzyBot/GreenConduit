@@ -9,9 +9,13 @@ public class PlayerPickUpPutDown : MonoBehaviour
     public GameObject holding;
 
     public GameObject plantAnkPoint;
+    Quaternion plantRotation;
 
     public Vector3 placePosition;
     public float potPlacementHeight;
+
+    public float raycastLength;
+    RaycastHit hitGround;
 
     //Sound manager
     SoundManager sound;
@@ -50,6 +54,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
                     holding = plant;
                     holding.GetComponent<Collider>().isTrigger = true;
                     canInput = false;
+                    //plantRotation = plant.transform.rotation;
                     anim.DoScoop();
                 }
             }
@@ -61,14 +66,25 @@ public class PlayerPickUpPutDown : MonoBehaviour
                     potting = pot.GetComponent<Pot>().isFull != true;
                     if (potting == true)    //can not place when in front of full pot
                     {
+                        plantRotation = holding.transform.rotation;
                         canInput = false;
                         anim.DoPlace();
                     }
                 }
                 else
                 {
-                    canInput = false;
-                    anim.DoPlace();
+                    Physics.Raycast(transform.position + (transform.rotation * new Vector3(placePosition.x, raycastLength - transform.position.y, 0)), Vector3.down, out hitGround, raycastLength * 2);
+
+                    //Debug.Log((transform.position + (transform.rotation * new Vector3(placePosition.x, raycastLength - transform.position.y, 0))) + " to " + (transform.position + (transform.rotation * new Vector3(placePosition.x, -raycastLength - transform.position.y, 0))));
+                    //Debug.Log(hitGround.collider);
+                    //Debug.Log(hitGround.point);
+
+                    if (hitGround.collider != null)
+                    {
+                        plantRotation = holding.transform.rotation;
+                        canInput = false;
+                        anim.DoPlace();
+                    }
                 }
             }
         }
@@ -120,7 +136,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
 
     public void DoPlace()
     {
-        holding.transform.rotation = Quaternion.identity;
+        holding.transform.rotation = plantRotation;
         sound.effortPlay();
         sound.plantPlay();
 
@@ -133,7 +149,7 @@ public class PlayerPickUpPutDown : MonoBehaviour
         else
         {
             holding.transform.parent = null;
-            holding.transform.position = transform.position + (transform.rotation * placePosition);
+            holding.transform.position = hitGround.point;
         }
     }
 
@@ -159,4 +175,3 @@ public class PlayerPickUpPutDown : MonoBehaviour
     }
 
 }
-

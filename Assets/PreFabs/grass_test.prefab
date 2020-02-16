@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2508264872125498320}
   - component: {fileID: 2508264872125498326}
   - component: {fileID: 2508264872125498321}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 2508264872435450957}
   - component: {fileID: -4197543756964589729}
   - component: {fileID: 2508264872435450946}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: grass_test
   m_TagString: grass
   m_Icon: {fileID: 0}

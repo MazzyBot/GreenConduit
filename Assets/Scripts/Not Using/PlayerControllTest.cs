@@ -90,7 +90,7 @@ public class PlayerControllTest : MonoBehaviour
     void FixedUpdate()
     {
         //update rb here
-        
+
         rb.MoveRotation((rb.rotation * rbRotate).normalized);
         rb.MovePosition(transform.position + rbMove);
 
@@ -111,7 +111,7 @@ public class PlayerControllTest : MonoBehaviour
     {
         //if (collision.gameObject.CompareTag("ground"))
         //{
-            onGroundColli = true;
+        onGroundColli = true;
         //}
     }
 
@@ -119,7 +119,7 @@ public class PlayerControllTest : MonoBehaviour
     {
         //if (collision.gameObject.CompareTag("ground"))
         //{
-            onGroundColli = false;
+        onGroundColli = false;
         //}
     }
 }

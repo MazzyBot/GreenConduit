@@ -60,7 +60,8 @@ public class PlayerControll : MonoBehaviour
         }
         else    //make its current vector run its course, and stop footsteps
         {
-            //rbMove = rbMove;  //what currently it is when ground is false
+            //rbMove = rbMove * 0.95f;  //what currently it is when ground is false
+            //rbMove = new Vector3 (rbMove.x * 0.9f, 0, rbMove.z * 0.9f);
             anim.SetVelocity(0);
         }
 
@@ -69,7 +70,7 @@ public class PlayerControll : MonoBehaviour
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, groundCheckDistance);
         if (onGroundColli == false) //could get rid of secoundary check now
         {
-            if (hit.collider != null && hit.collider.CompareTag("ground"))
+            if (hit.collider != null /*&& hit.collider.CompareTag("ground")*/)
             {
                 onGround = true;
             }
@@ -106,17 +107,17 @@ public class PlayerControll : MonoBehaviour
     //on ground collide exit/entry
     void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
-        {
+        //if (collision.gameObject.CompareTag("ground"))
+        //{
             onGroundColli = true;
-        }
+        //}
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
-        {
+        //if (collision.gameObject.CompareTag("ground"))
+        //{
             onGroundColli = false;
-        }
+        //}
     }
 }
