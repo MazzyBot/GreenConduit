@@ -102,7 +102,7 @@ public class PlayerControllTest : MonoBehaviour
         //Debug.Log("colliding with " + collision.gameObject.name);
         if (!collision.gameObject.CompareTag("ignore for sound") && !collision.gameObject.CompareTag("ground") && !collision.gameObject.CompareTag("grass"))
         {
-            sound.collisionPlay();
+            sound.effortPlay();
         }
     }
 

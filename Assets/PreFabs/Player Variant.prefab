@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2114678700
+--- !u!114 &1789064250063844748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,11 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 579781185937951919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9fe518e225d84d438e6f45c8b5f510c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3720abc4bcc9168439ef3c5267ec8bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inWindZone: 0
-  windZone: {fileID: 0}
+  onGround: 0
+  onGroundColli: 0
+  groundCheckDistance: 0.51
+  speedTurn: 10
+  speedMove: 4
+  anim: {fileID: 1505962322885542591}
 --- !u!114 &1876391962031284857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,24 +40,6 @@ MonoBehaviour:
   anim: {fileID: 1505962322885542591}
   canInput: 1
   potting: 0
---- !u!114 &1789064250063844748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579781185937951919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3720abc4bcc9168439ef3c5267ec8bed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onGround: 0
-  onGroundColli: 0
-  groundCheckDistance: 0.51
-  speedTurn: 10
-  speedMove: 4
-  anim: {fileID: 1505962322885542591}
 --- !u!114 &1505962322885542591
 MonoBehaviour:
   m_ObjectHideFlags: 0
