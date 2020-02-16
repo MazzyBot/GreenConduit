@@ -27,10 +27,11 @@ public class AnimationController : MonoBehaviour
         anim.SetTrigger(placeTrigger);
     }
 
-    public void SetVelocity(float vel)
+    public void SetVelocity(float vel, float moveInput)
     {
         anim.SetBool(isMoving, vel != 0);
-        anim.SetFloat(movingSpeed, vel);
+        // multiplies the speed animation speed. -1 to move backwards
+        anim.SetFloat(movingSpeed, moveInput);
     }
 
     public void Scoop()

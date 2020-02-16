@@ -54,7 +54,7 @@ public class PlayerControll : MonoBehaviour
         {
             rbMove = transform.rotation * (new Vector3((Input.GetAxis("Vertical") * (speedMove / 3) * Time.deltaTime), 0, 0));
         }
-        anim.SetVelocity(rbMove.x);
+        anim.SetVelocity(rbMove.x, axisV);
     }
 
     void FixedUpdate()
