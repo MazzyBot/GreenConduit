@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetSpeed: 2
   timeTillReset: 5
-  resetTimeLength: 40
+  resetTimeLength: 60
   canReset: 0
   reset: 0
 --- !u!136 &2508264872435450946

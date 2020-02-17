@@ -11,6 +11,7 @@ public class CameraModeSwitcher : MonoBehaviour
         if (other.CompareTag("player"))
         {
             cam.followingPlayer = false;
+            cam.cameraHoldPosition = transform;
         }
     }
 
@@ -19,6 +20,7 @@ public class CameraModeSwitcher : MonoBehaviour
         if (other.CompareTag("player"))
         {
             cam.followingPlayer = true;
+            cam.cameraHoldPosition = null;
         }
     }
 }
