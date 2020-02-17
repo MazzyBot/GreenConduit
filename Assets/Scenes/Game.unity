@@ -2156,20 +2156,20 @@ AudioReverbZone:
   m_Enabled: 1
   m_MinDistance: 5
   m_MaxDistance: 20
-  m_ReverbPreset: 9
+  m_ReverbPreset: 27
   m_Room: -1000
-  m_RoomHF: 0
-  m_DecayTime: 2.91
-  m_DecayHFRatio: 1.3
-  m_Reflections: -602
-  m_ReflectionsDelay: 0.015
-  m_Reverb: -302
-  m_ReverbDelay: 0.022
+  m_RoomHF: -698
+  m_DecayTime: 5.1
+  m_DecayHFRatio: 0.33
+  m_Reflections: -1378
+  m_ReflectionsDelay: 0.02
+  m_Reverb: 16
+  m_ReverbDelay: 0.03
   m_HFReference: 5000
   m_Diffusion: 100
   m_Density: 100
   m_LFReference: 250
-  m_RoomLF: 0
+  m_RoomLF: -135
 --- !u!1001 &281034505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5779,7 +5779,8 @@ AudioSource:
   m_GameObject: {fileID: 800064276}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8146662995642060335, guid: 19a0c61b06c4f47dea67879cd4527641,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: dfdf5265711dbc34690a3dc2b1c91cdf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
@@ -10513,7 +10514,8 @@ AudioSource:
   m_GameObject: {fileID: 1618694462}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8146662995642060335, guid: 19a0c61b06c4f47dea67879cd4527641,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: c04a2d6ea2fe9af4290c5939ca597323, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.35
@@ -14199,6 +14201,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3014449310050093923, guid: fd6ee2610475466459e90037e07f0d1f,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7155480049154504419, guid: 19a0c61b06c4f47dea67879cd4527641,
+        type: 2}
     - target: {fileID: 3014449310050093929, guid: fd6ee2610475466459e90037e07f0d1f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14253,26 +14261,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3014449310050093932, guid: fd6ee2610475466459e90037e07f0d1f,
-        type: 3}
-      propertyPath: raycastLength
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3014449310050093934, guid: fd6ee2610475466459e90037e07f0d1f,
-        type: 3}
-      propertyPath: reboundSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3014449310050093935, guid: fd6ee2610475466459e90037e07f0d1f,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 3014449310050093935, guid: fd6ee2610475466459e90037e07f0d1f,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd6ee2610475466459e90037e07f0d1f, type: 3}
