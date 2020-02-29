@@ -29,14 +29,14 @@ public class PlantSway : MonoBehaviour
             //start sway
             if (back == false)
             {
-                transform.Rotate(speed, 0, 0, Space.Self);
+                transform.Rotate(speed * Time.deltaTime, 0, 0, Space.Self);
                 //Debug.Log("pos speed");
             }
 
 
             if (back == true)
             {
-                transform.Rotate(-speed, 0, 0, Space.Self);
+                transform.Rotate(-speed * Time.deltaTime, 0, 0, Space.Self);
                 //Debug.Log("neg speed");
             }
         }
